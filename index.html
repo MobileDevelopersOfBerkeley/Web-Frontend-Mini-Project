@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title> MDB Application Portal</title>
+		<!-- Angular -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+		<!-- Boostrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Custom -->
+		<link rel="stylesheet" href="assets/styles.css">
+		<script src="assets/scripts.js"></script>
+		<script src="app/directives.js"></script>
+		<script src="app/controllers.js"></script>
+		<script src="app/services.js"></script>
+		<script src="app/app.js"></script>
+	</head>
+	<body ng-app="app" ng-controller="MainCtrl">
+		<!-- The navigation menu will get the value of the "active" variable as a class.
+		The $event.preventDefault() stops the page from jumping when a link is clicked. -->
+		<nav class="{{active}}" ng-click="$event.preventDefault()">
+			<!-- When a link in the menu is clicked, we set the active variable -->
+			<a href="#" class="application" ng-click="changeActive('application')">Application</a>
+			<a href="#" class="submited" ng-click="changeActive('submited')">Submited</a>
+		</nav>
+		<img ng-hide="!loading" src="assets/loading.gif">
+		<!-- ng-show will show an element if the value in the quotes is truthful,
+			while ng-hide does the opposite. Because the active variable is not set
+		initially, this will cause the first paragraph to be visible. -->
+		<div ng-if="active == 'application'" ng-include="'views/application.html'"></div>
+		<div ng-if="active == 'submited'" ng-include="'views/submited.html'"></div>
+	</body>
+</html>

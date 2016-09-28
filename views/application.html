@@ -1,0 +1,23 @@
+<div class="tab-page" ng-controller="ApplicationCtrl">
+	<center>
+		<form>
+			<div class="form-group application-item">
+				<label for="name">Name:</label>
+				<input type="text" id ="name" class="form-control" ng-model="name" />
+			</div>
+			<div class="form-group application-item">
+				<label for="age">Age:</label>
+				<input type="number" id ="age" class="form-control" ng-model="age" />
+			</div>
+			<div class="checkbox application-item">
+				<label><input type="checkbox" value="" ng-model="kewl">Are you kewl?</label>
+			</div>
+			<div class="form-group application-item">
+				<label for="resume">Resume:</label>
+				<input type="file" id ="resume" class="form-control" filemodel="resume" />
+			</div>
+			<button type="button" class="btn btn-success" ng-click="submit()">Submit</button>
+			<button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+		</form>
+	</center>
+</div>

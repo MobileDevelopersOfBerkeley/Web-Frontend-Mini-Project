@@ -1,0 +1,22 @@
+<div class="tab-page" ng-controller="SubmitedCtrl">
+	<table class="table table-bordered">
+		<thead>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Kewl?</th>
+					<th>Resume Link</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="application in applications" ng-class="{success: application.resume, danger: !application.resume}">
+					<td>{{application.name}}</td>
+					<td>{{application.age}}</td>
+					<td>{{(application.kewl) ? "Yes" : "No"}}</td>
+					<td ng-if="application.resume"><a target="_blank" href="{{application.resume}}">Link</a></td>
+					<td ng-if="!application.resume">Not Uploaded</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
