@@ -1,0 +1,1 @@
+angular.module('app', ['ngRoute', 'ngAnimate', 'app.services', 'app.controllers', 'app.directives']);

@@ -1,7 +1,0 @@
-section {
-	margin-bottom: 20px !important;
-}
-
-.mdl-progress, .mdl-js-progress, .mdl-progress__indeterminate {
-	visibility: hidden;
-}
